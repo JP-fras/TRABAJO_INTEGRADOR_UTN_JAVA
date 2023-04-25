@@ -5,7 +5,15 @@ public class Pronostico {
     private Equipo equipo;
     private ResultadoEnum resultado;
 
+    public String getIdPronostico() {
+        return IdPronostico;
+    }
 
+    public void setIdPronostico(String idPronostico) {
+        IdPronostico = idPronostico;
+    }
+
+    private String IdPronostico;
 
     private String nombre;
 

@@ -7,7 +7,7 @@ public class RondaTest extends TestCase {
     //TEST PARA COMPROBAR QUE LA FUNCION PARA CALCULAR LOS PUNTOS FUNCIONE CORRECTAMENTE
     @Test
     public void testPuntos() {
-        Ronda c = new Ronda();
+        Persona c = new Persona("prueba");
         Pronostico pronostico = new Pronostico();
         Partido partido = new Partido();
         partido.setGolesEquipo1(1);

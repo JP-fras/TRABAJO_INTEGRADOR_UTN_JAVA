@@ -43,6 +43,21 @@ public class Persona {
         }
         return edad;
     }
+
+    public int puntos(Pronostico pronostico, Partido partido){
+        int puntaje = 0;
+        if (partido.resultado(partido).equals(pronostico.getResultado(pronostico)))
+            puntaje++;
+        return puntaje;
+    }
+
+    public int sumarPuntajePorRonda(Pronostico pronostico, Partido partido, Ronda ronda, int puntaje ) {
+
+        if (ronda.getPartido(1).resultado(partido).equals(pronostico.getResultado(pronostico)))
+            puntaje++;
+        return puntaje;
+
+    }
 }
 
 

@@ -31,4 +31,6 @@ public class Partido {
             return result.empate();
         }
     }
+
+    public String resultadoFinal;
 }

@@ -1,11 +1,33 @@
 package integrador;
 
 public class Ronda {
-
-    public int puntos(Pronostico pronostico, Partido partido){
-        int puntaje = 0;
-        if (partido.resultado(partido).equals(pronostico.getResultado(pronostico)))
-            puntaje++;
-        return puntaje;
+    public Ronda(String nro, Partido[] partidos) {
+        this.partidos = partidos;
     }
+
+    public String getNro() {
+        return nro;
+    }
+
+    public void setNro(String nro) {
+        this.nro = nro;
+    }
+
+    private String nro;
+
+
+    public Partido getPartido(int i) {
+        return partidos[i];
+    }
+
+    public void setPartidos(Partido partido, int i) {
+        this.partidos[i] = partido;
+    }
+
+    private Partido[] partidos;
+
+    private Integer cuantasGanoPorRonda;
+
+
+
 }
