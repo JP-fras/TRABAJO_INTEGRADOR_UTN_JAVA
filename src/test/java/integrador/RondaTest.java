@@ -8,7 +8,7 @@ public class RondaTest extends TestCase {
     @Test
     public void testPuntos() {
         Persona c = new Persona("prueba");
-        Pronostico pronostico = new Pronostico();
+        Pronostico pronostico = new Pronostico("prueba");
         Partido partido = new Partido();
         partido.setGolesEquipo1(1);
         partido.setGolesEquipo2(0);

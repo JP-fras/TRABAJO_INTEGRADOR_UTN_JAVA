@@ -32,5 +32,4 @@ public class Partido {
         }
     }
 
-    public String resultadoFinal;
 }

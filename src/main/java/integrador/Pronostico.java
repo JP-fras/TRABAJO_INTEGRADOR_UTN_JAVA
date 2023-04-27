@@ -4,20 +4,35 @@ public class Pronostico {
     private Partido partido;
     private Equipo equipo;
     private ResultadoEnum resultado;
+    private String IdPartido;
+    private String nombre;
+    private String IdPronostico;
 
     public String getIdPronostico() {
         return IdPronostico;
     }
 
-    public void setIdPronostico(String idPronostico) {
+    public void setIdPronostico(String idPronostico, String idPartidoPronostico) {
         IdPronostico = idPronostico;
+        IdPartido = idPartidoPronostico;
     }
 
-    private String IdPronostico;
+    public String getIdPartido() {
+        return IdPartido;
+    }
 
-    private String nombre;
+    public void setIdPartido(String idPartido) {
+        IdPartido = idPartido;
+    }
 
-    public Pronostico(){};
+
+    public String nombre() {
+        return nombre;
+    }
+
+    public Pronostico(String idPronostico){
+        this.IdPronostico = idPronostico;
+    };
 
     public String getResultado(Pronostico pronostico){
         return pronostico.resultado.getResultado();
@@ -27,10 +42,13 @@ public class Pronostico {
         this.resultado = result;
     }
     //public int puntos(){};
-    public String nombre() {
-            return nombre;
-        }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+
+
+
+
 }

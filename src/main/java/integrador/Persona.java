@@ -1,13 +1,15 @@
 package integrador;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 public class Persona {
     private String nombre;
-    private String apellido;
     private LocalDateTime fechaNacimiento;
-
+    private ArrayList<Integer> partidosAcertadosp;
+    private int Aciertos;
     private int Puntaje;
+
     public Persona(String nombre){
     }
     public String getNombre(){
@@ -15,10 +17,6 @@ public class Persona {
     }
     public void setNombre(String nuevoNombre){
         this.nombre = nuevoNombre;
-    }
-
-    public void setApellido(String nuevoApellido){
-        this.apellido = nuevoApellido;
     }
 
     public void setFechaNacimiento(LocalDateTime nuevaFechaNacimiento){
@@ -31,6 +29,41 @@ public class Persona {
     public void setPuntaje(int puntaje) {
         Puntaje = puntaje;
     }
+
+
+    public int getAciertos() {
+        return Aciertos;
+    }
+
+    public void setAciertos(int aciertos) {
+        Aciertos = aciertos;
+    }
+
+
+
+    public int puntos(Pronostico pronostico, Partido partido){
+        int puntaje = 0;
+        if (partido.resultado(partido).equals(pronostico.getResultado(pronostico)))
+            puntaje++;
+        return puntaje;
+    }
+
+    public int aciertos(Pronostico pronostico, Partido partido){
+        int aciertos = 0;
+        if (partido.resultado(partido).equals(pronostico.getResultado(pronostico)))
+            aciertos++;
+        return aciertos;
+    }
+
+    public ArrayList<Integer> getPartidosAcertadosp() {
+        return partidosAcertadosp;
+    }
+
+    public void setPartidosAcertadosp(ArrayList<Integer> partidosAcertadosp) {
+        this.partidosAcertadosp = partidosAcertadosp;
+    }
+
+
     public int calcularEdad(){
         int edad = LocalDateTime.now().getYear() - fechaNacimiento.getYear();
         if(LocalDateTime.now().getMonthValue() < fechaNacimiento.getMonthValue())
@@ -44,20 +77,6 @@ public class Persona {
         return edad;
     }
 
-    public int puntos(Pronostico pronostico, Partido partido){
-        int puntaje = 0;
-        if (partido.resultado(partido).equals(pronostico.getResultado(pronostico)))
-            puntaje++;
-        return puntaje;
-    }
-
-    public int sumarPuntajePorRonda(Pronostico pronostico, Partido partido, Ronda ronda, int puntaje ) {
-
-        if (ronda.getPartido(1).resultado(partido).equals(pronostico.getResultado(pronostico)))
-            puntaje++;
-        return puntaje;
-
-    }
 }
 
 
